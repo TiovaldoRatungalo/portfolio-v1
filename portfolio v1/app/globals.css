@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================
+   🧠 GLOBAL SAFARI & iPHONE OPTIMIZED
+   ===================================== */
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: auto !important;
+  -webkit-tap-highlight-color: transparent; /* Hilangkan highlight saat tap di iPhone */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 60 25% 98%;      /* #FAFAF8 */
+    --foreground: 253 30% 6%;       /* #0D0B14 */
+    
+    --card: 0 0% 100%;           /* #FFFFFF */
+    --card-foreground: 253 30% 6%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 253 30% 6%;
+    
+    --primary: 258 50% 36%;          /* #4A2E8C */
+    --primary-foreground: 60 25% 98%; /* #FAFAF8 */
+    
+    --secondary: 258 30% 92%;       /* Soft purple for light mode active/hover */
+    --secondary-foreground: 258 50% 36%;
+    
+    --muted: 258 20% 96%;           /* Light purple-grey */
+    --muted-foreground: 257 14% 44%; /* #6A6180 */
+    
+    --accent: 258 30% 92%;          /* Match secondary */
+    --accent-foreground: 258 50% 36%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 258 14% 83%;          /* #D1CDDA */
+    --input: 258 14% 83%;
+    --ring: 258 50% 36%;             /* #4A2E8C */
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 253 30% 6%;       /* #0D0B14 */
+    --foreground: 257 26% 94%;      /* #EDEBF2 */
+    
+    --card: 256 26% 12%;            /* #1A1625 */
+    --card-foreground: 257 26% 94%;
+    
+    --popover: 256 26% 12%;
+    --popover-foreground: 257 26% 94%;
+    
+    --primary: 255 53% 55%;         /* #6C4FC7 */
+    --primary-foreground: 257 26% 94%;   /* #EDEBF2 */
+    
+    --secondary: 258 22% 18%;       /* #2A2438 */
+    --secondary-foreground: 257 26% 94%;
+    
+    --muted: 255 25% 9%;            /* #15121E */
+    --muted-foreground: 254 28% 69%; /* #A69CC7 */
+    
+    --accent: 261 48% 21%;          /* #2D1B4E */
+    --accent-foreground: 257 26% 94%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 258 22% 18%;          /* #2A2438 */
+    --input: 258 22% 18%;
+    --ring: 255 53% 55%;            /* #6C4FC7 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* ======= NEON EFFECT (Midnight Purple) ======= */
+  .neon {
+    text-shadow:
+      0 0 4px rgba(108, 79, 199, 0.7),
+      0 0 10px rgba(108, 79, 199, 0.5),
+      0 0 22px rgba(108, 79, 199, 0.35),
+      0 0 48px rgba(74, 46, 140, 0.2);
+  }
+
+  /* ======= [1] NOISE / GRAIN TEXTURE ======= */
+  /* Applied as a fixed pseudo-element overlay at 4% opacity.
+     SVG feTurbulence generates the grain pattern — no external file needed. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+  }
+  /* Disable on iOS for performance */
+  @supports (-webkit-touch-callout: none) {
+    body::after { display: none; }
+  }
+
+  /* ======= SPARKLE EFFECT ======= */
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkle-ping 1.2s infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes sparkle-ping {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0.7;
+    }
+  }
+
+  /* ======= OPTIMISASI ANIMASI / GPU ======= */
+  .motion-smooth {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* =====================================
+   ✨ VISUAL POLISH UTILITIES
+   ===================================== */
+
+/* [2] Glow border on hover for cards/sections */
+.glow-border {
+  border: 1px solid hsl(var(--border));
+  transition: border-color 350ms ease, box-shadow 350ms ease;
+}
+.dark .glow-border:hover {
+  border-color: #6C4FC7;
+  box-shadow: 0 0 0 1px rgba(108, 79, 199, 0.25), 0 0 16px rgba(108, 79, 199, 0.15);
+}
+
+/* [3] Animated floating gradient glow (10-12s breathing cycle) */
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1.0; transform: scale(1.08); }
+}
+.glow-breathe {
+  animation: glow-breathe 12s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+/* [4] HUD grid lines for hero section */
+.hud-grid {
+  background-image:
+    linear-gradient(rgba(108, 79, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 79, 199, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* [6] Micro-interaction utilities for buttons and nav links */
+.btn-glow {
+  transition: transform 300ms ease, box-shadow 300ms ease, background-color 300ms ease;
+}
+.dark .btn-glow:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 14px rgba(108, 79, 199, 0.4);
+}
+
+/* [5] Glassmorphism card upgrade */
+.glass-card {
+  background: rgba(26, 22, 37, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-shadow: inset 0 0 0 1px rgba(108, 79, 199, 0.12), 0 4px 32px rgba(0,0,0,0.4);
+  transition: box-shadow 350ms ease, border 350ms ease;
+}
+.dark .glass-card:hover {
+  box-shadow: inset 0 0 0 1px rgba(108, 79, 199, 0.35), 0 4px 40px rgba(108, 79, 199, 0.12);
+}
+
+/* =====================================
+   📱 iPHONE & SAFARI PERFORMANCE FIXES
+   ===================================== */
+@supports (-webkit-touch-callout: none) {
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  /* 🔹 Kurangi blur berat tapi pertahankan efek */
+  .backdrop-blur,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    -webkit-backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  /* 🔹 Aktifkan GPU untuk animasi */
+  .motion-optimized {
+    will-change: transform, opacity !important;
+    transform: translateZ(0);
+  }
+
+  /* 🔹 Prioritaskan .motion-smooth di Safari */
+  .motion-smooth {
+    will-change: transform, opacity !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+  }
+
+  /* 🔹 Ringankan shadow berat */
+  .heavy-shadow {
+    box-shadow: 0 0 8px rgba(103, 232, 249, 0.3) !important;
+  }
+}
+
+/* Mode tambahan untuk Safari Optimization */
+body.safari-optimized * {
+  will-change: transform, opacity !important;
+  transform: translateZ(0);
+}
+
+/* =====================================
+   ⭐ CLEAN & MINIMALIST AVATAR
+   Professional, static elegance with smooth hover
+   ===================================== */
+
+.avatar-orbit-border {
+  position: relative;
+  display: inline-flex;
+  padding: 8px; 
+  border-radius: 50%;
+  /* Lingkaran statis yang clean dan premium */
+  background: linear-gradient(135deg, rgba(108, 79, 199, 0.1), rgba(108, 79, 199, 0.02));
+  box-shadow: 
+    0 0 0 1px rgba(108, 79, 199, 0.15),
+    0 10px 30px -10px rgba(108, 79, 199, 0.1);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+}
+
+/* Cincin tambahan di luar yang muncul saat di-hover */
+.avatar-orbit-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(108, 79, 199, 0.4);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
+}
+
+/* Efek saat mouse diarahkan (Hover) */
+.avatar-orbit-border:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(108, 79, 199, 0.15), rgba(108, 79, 199, 0.05));
+  box-shadow: 
+    0 0 0 1px rgba(108, 79, 199, 0.25),
+    0 20px 40px -10px rgba(108, 79, 199, 0.2);
+}
+
+.avatar-orbit-border:hover::before {
+  inset: -8px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Foto Profil */
+.avatar-orbit-border img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--background);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.avatar-orbit-border:hover img {
+  transform: scale(0.97);
+}
