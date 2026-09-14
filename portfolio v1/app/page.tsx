@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import AiChat from "@/components/AiChat";
@@ -34,6 +34,105 @@ const LogoLoop = dynamic(() => import("../components/LogoLoop"), {
 const Landyard = dynamic(() => import("../components/Landyard/Landyard"), {
   ssr: false,
 });
+
+// ── 3D Tilt Card Component ─────────────────────────────────────────────────
+interface TiltCardProps {
+  proj: { image: string; title: string; description: string; tools: string };
+  index: number;
+}
+
+const TiltCard = ({ proj, index }: TiltCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const glareRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    const glare = glareRef.current;
+    if (!card || !glare) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -12;
+    const rotateY = ((x - centerX) / centerX) * 12;
+
+    const glareX = (x / rect.width) * 100;
+    const glareY = (y / rect.height) * 100;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.04, 1.04, 1.04)`;
+    glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%)`;
+    glare.style.opacity = '1';
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    const card = cardRef.current;
+    const glare = glareRef.current;
+    if (!card || !glare) return;
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    glare.style.opacity = '0';
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6, delay: index * 0.07, ease: "easeOut" }}
+      style={{ perspective: '1000px' }}
+    >
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative rounded-2xl overflow-hidden cursor-pointer group"
+        style={{
+          transition: 'transform 0.15s ease-out, box-shadow 0.4s ease',
+          transformStyle: 'preserve-3d',
+          boxShadow: '0 10px 40px rgba(108, 79, 199, 0.15)',
+        }}
+      >
+        {/* Image */}
+        <div className="aspect-[4/3] overflow-hidden">
+          <img
+            src={proj.image}
+            alt={proj.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
+
+        {/* Bottom gradient info panel */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B14] via-[#0D0B14]/40 to-transparent flex flex-col justify-end p-5">
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 drop-shadow">
+            {proj.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 mb-3 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+            {proj.description}
+          </p>
+          <div className="flex flex-wrap gap-1.5 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 delay-75">
+            {proj.tools.split(',').map((tool, idx) => (
+              <span key={idx} className="px-2.5 py-1 bg-primary/20 border border-primary/40 rounded-full text-[10px] text-white font-mono backdrop-blur-sm">
+                {tool.trim()}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Glare Effect */}
+        <div
+          ref={glareRef}
+          className="absolute inset-0 pointer-events-none rounded-2xl"
+          style={{ opacity: 0, transition: 'opacity 0.3s ease', mixBlendMode: 'overlay' }}
+        />
+
+        {/* Border glow on hover */}
+        <div className="absolute inset-0 rounded-2xl border border-primary/10 group-hover:border-primary/50 transition-colors duration-500 pointer-events-none" />
+      </div>
+    </motion.div>
+  );
+};
 
 const SkillRadialProgress = ({ skill, level, delay }: { skill: string, level: number, delay: number }) => {
   const ref = useRef(null);
@@ -354,9 +453,8 @@ export default function Home() {
           <div className="absolute inset-0 pointer-events-none z-0 glow-breathe" style={{ background: 'radial-gradient(circle at top left, rgba(74, 46, 140, 0.15), transparent 50%)' }} />
 
           {/* LEFT */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-2 relative z-10">
-            <div className="w-full text-base sm:text-lg lg:text-3xl font-bold flex flex-wrap items-center justify-center lg:justify-start gap-y-1 sm:gap-x-2 leading-snug">
-              <span>I am ready for job</span>
+          <div className="flex flex-col items-start text-left gap-2 relative z-10">
+            <div className="w-full text-base sm:text-lg lg:text-3xl font-bold flex flex-wrap items-center justify-start gap-y-1 sm:gap-x-2 leading-snug">
               <RotatingText
                 texts={[
                   "Front-End Developer",
@@ -379,18 +477,28 @@ export default function Home() {
               />
             </div>
 
+              {/* SVG Definition for Gradient */}
+              <svg width="0" height="0" className="absolute">
+                <defs>
+                  <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="hsl(var(--foreground))" />
+                    <stop offset="100%" stopColor="hsl(var(--primary))" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
               <StrokeText
               text="Tiovaldo Ratungalo"
               strokeColor="#6C4FC7"
-              fillColor="currentColor"
+              fillColor="url(#textGradient)"
               className="w-[85%] sm:w-[320px] md:w-[400px] lg:w-[450px] font-extrabold text-foreground"
             />
 
-            <p className="max-w-md md:max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed text-center lg:text-left">
+            <p className="max-w-md md:max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed text-left">
               Computer Science Graduate | Welcome to my portfolio
             </p>
 
-            <div className="flex gap-3 mt-2 flex-wrap justify-center lg:justify-start">
+            <div className="flex gap-3 mt-2 flex-wrap justify-start">
               <a
                 href="#contact"
                 className="px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 hover:invert transition btn-glow text-sm sm:text-base"
@@ -604,109 +712,11 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
             ></motion.p>
 
-            {/* Grid Projects */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full px-4 sm:px-0 transition-all duration-500 justify-items-center">
-              {projects.slice(currentIndex, currentIndex + 2).map((proj, i) => {
-                const globalIndex = currentIndex + i;
-                const isActive = globalIndex === activeIndex;
-
-                const handleClick = () => {
-                  setActiveIndex((prev) =>
-                    prev === globalIndex ? null : globalIndex,
-                  );
-                };
-
-                return (
-                  <div key={i} className="flex flex-col items-center">
-                    {/* Card */}
-                    <motion.div
-                      onClick={handleClick}
-                      className={`relative cursor-pointer rounded-2xl overflow-hidden shadow-md transition-all duration-500 glow-border
-              ${isActive ? "z-20" : "z-10 opacity-90"} project-card
-              w-[88vw] sm:w-[300px] md:w-[340px] lg:w-[380px] aspect-[4/3]`}
-                      animate={{
-                        scale: isActive ? 1.05 : 0.95,
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 150,
-                        damping: 18,
-                      }}
-                      whileHover={!isActive ? { scale: 1 } : {}}
-                    >
-                      {/* Gambar Project */}
-                      <motion.img
-                        src={proj.image}
-                        alt={`Project ${globalIndex + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-700"
-                        animate={{
-                          scale: isActive ? 1.15 : 1,
-                        }}
-                        transition={{ duration: 0.5 }}
-                      />
-
-                      {/* Overlay info toggle */}
-                      {isActive && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.4 }}
-                          className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center text-center p-4"
-                        >
-                          <h3 className="text-foreground font-semibold text-lg mb-1">
-                            {proj.title}
-                          </h3>
-                          <p className="text-secondary-foreground text-sm mb-2">
-                            {proj.description}
-                          </p>
-                          <span className="text-xs text-foreground italic">
-                            Tools: {proj.tools}
-                          </span>
-                          <p className="text-[10px] mt-2 opacity-80">
-                            (Click again to close)
-                          </p>
-                        </motion.div>
-                      )}
-                    </motion.div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex items-center gap-6 mt-10">
-              <button
-                onClick={() => {
-                  setCurrentIndex((prev) => Math.max(prev - 1, 0));
-                  setActiveIndex(null);
-                }}
-                disabled={currentIndex === 0}
-                className={`px-4 py-2 rounded-lg border border-border text-foreground btn-glow glow-border
-        hover:bg-foreground hover:text-background transition-all duration-300
-        ${currentIndex === 0 ? "opacity-40 cursor-not-allowed" : ""}`}
-              >
-                ← Previous
-              </button>
-
-              <button
-                onClick={() => {
-                  setCurrentIndex((prev) =>
-                    prev + 1 < projects.length ? prev + 1 : prev,
-                  );
-                  setActiveIndex(null);
-                }}
-                disabled={currentIndex + 2 >= projects.length}
-                className={`px-4 py-2 rounded-lg border border-border text-foreground btn-glow glow-border
-        hover:bg-foreground hover:text-background transition-all duration-300
-        ${
-          currentIndex + 2 >= projects.length
-            ? "opacity-40 cursor-not-allowed"
-            : ""
-        }`}
-              >
-                Next →
-              </button>
+            {/* 3D Tilt Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full px-4 sm:px-0">
+              {projects.map((proj, i) => (
+                <TiltCard key={i} proj={proj} index={i} />
+              ))}
             </div>
           </div>
         </section>
@@ -831,7 +841,7 @@ export default function Home() {
         </section>
 
         {/* ====== FOOTER ====== */}
-        <footer className="relative bg-[#0D0B14] py-10 border-t border-[#2A2438] transition-colors duration-300 overflow-hidden">
+        <footer className="relative bg-background dark:bg-[#0D0B14] py-10 border-t border-border dark:border-[#2A2438] transition-colors duration-300 overflow-hidden">
           {/* Subtle purple glow at top-center */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-72 h-16 bg-primary/5 blur-2xl rounded-full pointer-events-none" />
@@ -848,28 +858,28 @@ export default function Home() {
                 {
                   title: "Instagram",
                   icon: (
-                    <IconBrandInstagram className="h-full w-full text-gray-400 hover:text-foreground transition-colors" />
+                    <IconBrandInstagram className="h-full w-full text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary-foreground transition-colors" />
                   ),
                   href: "https://www.instagram.com/tiovaldoo?igsh=MWcxbHdyejNtdm4xdg==",
                 },
                 {
                   title: "Github",
                   icon: (
-                    <IconBrandGithub className="h-full w-full text-gray-400 hover:text-foreground transition-colors" />
+                    <IconBrandGithub className="h-full w-full text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary-foreground transition-colors" />
                   ),
                   href: "https://github.com/TiovaldoRatungalo",
                 },
                 {
                   title: "X",
                   icon: (
-                    <IconBrandX className="h-full w-full text-gray-400 hover:text-foreground transition-colors" />
+                    <IconBrandX className="h-full w-full text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary-foreground transition-colors" />
                   ),
                   href: "https://discord.gg/yourinvite",
                 },
                 {
                   title: "LinkedIn",
                   icon: (
-                    <IconBrandLinkedin className="h-full w-full text-gray-400 hover:text-foreground transition-colors" />
+                    <IconBrandLinkedin className="h-full w-full text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-primary-foreground transition-colors" />
                   ),
                   href: "https://linkedin.com/in/yourusername",
                 },

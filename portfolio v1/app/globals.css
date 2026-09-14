@@ -198,13 +198,18 @@ html {
 
 /* [5] Glassmorphism card upgrade */
 .glass-card {
-  background: rgba(26, 22, 37, 0.6);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-clip: padding-box;
+  box-shadow: inset 0 0 0 1px rgba(108, 79, 199, 0.12), 0 4px 32px rgba(0,0,0,0.1);
+  transition: box-shadow 350ms ease, border 350ms ease, background 350ms ease;
+}
+.dark .glass-card {
+  background: rgba(26, 22, 37, 0.6);
+  border: 1px solid transparent;
   box-shadow: inset 0 0 0 1px rgba(108, 79, 199, 0.12), 0 4px 32px rgba(0,0,0,0.4);
-  transition: box-shadow 350ms ease, border 350ms ease;
 }
 .dark .glass-card:hover {
   box-shadow: inset 0 0 0 1px rgba(108, 79, 199, 0.35), 0 4px 40px rgba(108, 79, 199, 0.12);
