@@ -576,7 +576,11 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const ua = navigator.userAgent;
-      setIsIOS(/iPad|iPhone|iPod/.test(ua));
+      const is_ios = /iPad|iPhone|iPod/.test(ua);
+      setIsIOS(is_ios);
+      if (is_ios) {
+        setLoadingDone(true);
+      }
       const checkMobile = () => setIsMobile(window.innerWidth < 768);
       checkMobile();
       window.addEventListener("resize", checkMobile);
@@ -735,12 +739,14 @@ export default function Home() {
               </defs>
             </svg>
 
-            <StrokeText
-              text="Tiovaldo Ratungalo"
-              strokeColor="#6C4FC7"
-              fillColor="url(#textGradient)"
-              className="w-[85%] sm:w-[320px] md:w-[400px] lg:w-[450px] font-extrabold text-foreground"
-            />
+            <div className="w-full">
+              <StrokeText
+                text="Tiovaldo Ratungalo"
+                strokeColor="#6C4FC7"
+                fillColor="url(#textGradient)"
+                className="font-extrabold text-foreground"
+              />
+            </div>
 
             <motion.p
               initial={{ opacity: 0, x: -20 }}
@@ -1041,7 +1047,7 @@ export default function Home() {
           {/* Landyard — hidden on mobile, shown on desktop only */}
           <div className="hidden lg:flex lg:w-1/2 items-center justify-center relative z-0 pointer-events-none">
             <div className="w-full h-[600px] flex justify-center items-center">
-              {isClient && isContactInView && !prefersReducedMotion && (
+              {isClient && isContactInView && !prefersReducedMotion && !isMobile && (
                 <Landyard position={[0, -1, 15]} gravity={[0, -40, 0]} />
               )}
             </div>

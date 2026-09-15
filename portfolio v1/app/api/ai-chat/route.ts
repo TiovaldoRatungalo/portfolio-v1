@@ -82,10 +82,10 @@ function getBotReply(message: string) {
   const inputWords = normalized.split(/\s+/).filter(w => w.length > 0);
 
   // 1. EXACT PHRASE MATCH (Fast path for exact greetings/questions)
-  const exactMatch = knowledgeBase.find(item => 
+  const exactMatch = knowledgeBase.find(item =>
     item.keywords?.some(kw => normalized === kw.toLowerCase())
   );
-  
+
   if (exactMatch) {
     const answer = pickAnswer(exactMatch, language);
     return {
@@ -97,19 +97,19 @@ function getBotReply(message: string) {
 
   // 2. TOKEN-BASED FUZZY MATCHING (Robust against typos and noise words)
   const intentScores = new Map<number, { score: number, matches: number }>();
-  
+
   // Stop words to ignore during token matching so they don't hijack the intent
   const stopWords = ["apa", "siapa", "dimana", "kapan", "kenapa", "bagaimana", "cara", "yang", "dan", "untuk", "dari", "ke", "di", "tiovaldo", "tio", "ratungalo", "dia", "kamu", "saya", "buat", "bikin", "itu", "ini"];
-  
+
   for (const word of inputWords) {
     // Only fuzzy search meaningful words
     if (stopWords.includes(word) || word.length <= 2) continue;
-    
+
     const wordResults = fuse.search(word);
     if (wordResults.length > 0) {
       const bestForWord = wordResults[0];
       const score = bestForWord.score ?? 1;
-      
+
       // If the word matches a keyword confidently
       if (score <= 0.35) {
         const idx = bestForWord.item.intentIndex;
@@ -127,11 +127,11 @@ function getBotReply(message: string) {
       if (b[1].matches !== a[1].matches) return b[1].matches - a[1].matches;
       return (a[1].score / a[1].matches) - (b[1].score / b[1].matches);
     });
-    
+
     const bestMatch = sorted[0];
     const avgScore = bestMatch[1].score / bestMatch[1].matches;
     const bestItem = knowledgeBase[bestMatch[0]];
-    
+
     if (avgScore <= 0.35) {
       // Confident match
       return {
@@ -141,7 +141,7 @@ function getBotReply(message: string) {
       };
     }
   }
-  
+
   // 3. FULL PHRASE FUZZY MATCH (Fallback for multi-word intents that token matching missed)
   const fullResults = fuse.search(normalized);
   if (fullResults.length > 0) {
@@ -175,8 +175,8 @@ function getBotReply(message: string) {
 
       if (didYouMeanItems.length > 0) {
         return {
-          reply: language === "en" 
-            ? "I'm not sure I understand. Did you mean one of these topics?" 
+          reply: language === "en"
+            ? "I'm not sure I understand. Did you mean one of these topics?"
             : "Hmm, saya kurang yakin. Mungkin maksud kamu salah satu topik ini?",
           suggestions: defaultSuggestions[language],
           didYouMean: didYouMeanItems

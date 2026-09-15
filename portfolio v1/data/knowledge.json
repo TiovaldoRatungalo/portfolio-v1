@@ -2,461 +2,948 @@
   {
     "intent": "greeting",
     "keywords": [
-      "halo", "hai", "hello", "hi", "hey", "halo tio", "hai tio",
-      "selamat pagi", "selamat siang", "selamat sore", "selamat malam",
-      "good morning", "good evening", "yo", "sup"
+      "halo",
+      "hai",
+      "hello",
+      "hi",
+      "hey",
+      "halo tio",
+      "hai tio",
+      "selamat pagi",
+      "selamat siang",
+      "selamat sore",
+      "selamat malam",
+      "good morning",
+      "good evening",
+      "yo",
+      "sup"
     ],
     "answer_id": "Halo! 👋 Senang bertemu dengan kamu. Silakan tanyakan apa saja tentang Tiovaldo dan portfolio-nya.",
     "answer_en": "Hello! 👋 Nice to meet you. Feel free to ask anything about Tiovaldo and his portfolio.",
-    "suggestions": ["Siapa Tiovaldo?", "Lihat project", "Skill apa saja?", "Cara kontak"]
+    "suggestions": [
+      "Siapa Tiovaldo?",
+      "Lihat project",
+      "Skill apa saja?",
+      "Cara kontak"
+    ]
   },
   {
     "intent": "thanks",
     "keywords": [
-      "terima kasih", "thanks", "thank you", "makasih", "thx",
-      "trims", "tengkyu", "nuhun", "kamsia", "ty", "terima kaish"
+      "terima kasih",
+      "thanks",
+      "thank you",
+      "makasih",
+      "thx",
+      "trims",
+      "tengkyu",
+      "nuhun",
+      "kamsia",
+      "ty",
+      "terima kaish"
     ],
     "answer_id": "Sama-sama! 😊 Jika ada pertanyaan lain, saya siap membantu.",
     "answer_en": "You're welcome! 😊 If you have more questions, I'm ready to help.",
-    "suggestions": ["Lihat project", "Skill apa saja?", "Cara kontak"]
+    "suggestions": [
+      "Lihat project",
+      "Skill apa saja?",
+      "Cara kontak"
+    ]
   },
   {
     "intent": "how_are_you",
     "keywords": [
-      "apa kabar", "how are you", "kabar baik", "gimana kabarnya",
-      "how do you do", "how's it going", "kamu baik", "are you okay"
+      "apa kabar",
+      "how are you",
+      "kabar baik",
+      "gimana kabarnya",
+      "how do you do",
+      "how's it going",
+      "kamu baik",
+      "are you okay"
     ],
     "answer_id": "Saya baik! Terima kasih sudah bertanya. 😊 Ada yang bisa saya bantu tentang Tiovaldo?",
     "answer_en": "I'm doing well! Thanks for asking. 😊 How can I help you learn about Tiovaldo?",
-    "suggestions": ["Siapa Tiovaldo?", "Lihat project", "Skill apa saja?"]
+    "suggestions": [
+      "Siapa Tiovaldo?",
+      "Lihat project",
+      "Skill apa saja?"
+    ]
   },
   {
     "intent": "bot_identity",
     "keywords": [
-      "who are you", "siapa kamu", "kamu siapa", "what are you",
-      "perkenalkan dirimu", "kamu bot", "kamu ai", "are you a bot",
-      "are you real", "kamu robot", "tentang kamu", "tentukan dirimu"
+      "who are you",
+      "siapa kamu",
+      "kamu siapa",
+      "what are you",
+      "perkenalkan dirimu",
+      "kamu bot",
+      "kamu ai",
+      "are you a bot",
+      "are you real",
+      "kamu robot",
+      "tentang kamu",
+      "tentukan dirimu"
     ],
     "answer_id": "Saya adalah AI assistant yang membantu menjelaskan profil dan portfolio Tiovaldo Ratungalo. Saya bisa menjawab pertanyaan tentang skill, project, pendidikan, dan cara menghubungi Tiovaldo.",
     "answer_en": "I'm an AI assistant that helps explain Tiovaldo Ratungalo's profile and portfolio. I can answer questions about his skills, projects, education, and how to contact him.",
-    "suggestions": ["Siapa Tiovaldo?", "Skill apa saja?", "Lihat project"]
+    "suggestions": [
+      "Siapa Tiovaldo?",
+      "Skill apa saja?",
+      "Lihat project"
+    ]
   },
   {
     "intent": "bot_capabilities",
     "keywords": [
-      "bisa apa kamu", "kamu bisa apa", "what can you do", "apa yang bisa ditanyakan",
-      "topik apa saja", "bantuan", "help", "fitur", "menu",
-      "apa saja yang kamu tahu", "kamu paham apa", "tanya apa"
+      "bisa apa kamu",
+      "kamu bisa apa",
+      "what can you do",
+      "apa yang bisa ditanyakan",
+      "topik apa saja",
+      "bantuan",
+      "help",
+      "fitur",
+      "menu",
+      "apa saja yang kamu tahu",
+      "kamu paham apa",
+      "tanya apa"
     ],
     "answer_id": "Saya bisa menjawab tentang:\n• Profil & latar belakang Tiovaldo\n• Skill & keahlian teknis\n• Project & portfolio\n• Pendidikan\n• Pengalaman\n• Cara menghubungi\n• Posisi kerja yang dicari\n\nSilakan pilih topik atau ketik pertanyaan kamu!",
     "answer_en": "I can answer about:\n• Tiovaldo's profile & background\n• Skills & technical expertise\n• Projects & portfolio\n• Education\n• Experience\n• Contact information\n• Job positions sought\n\nPick a topic or type your question!",
-    "suggestions": ["Profil Tiovaldo", "Skill apa saja?", "Lihat project", "Pendidikan", "Cara kontak"]
+    "suggestions": [
+      "Profil Tiovaldo",
+      "Skill apa saja?",
+      "Lihat project",
+      "Pendidikan",
+      "Cara kontak"
+    ]
   },
   {
     "intent": "who_is_tiovaldo",
     "keywords": [
-      "siapa tiovaldo", "siapa tio", "tentang tio",
-      "owner", "pemilik website", "pemilik web ini",
-      "siapa yang buat website ini", "who is tiovaldo",
-      "who made this website", "siapa pembuat web", "siapa kamu sebenarnya"
+      "siapa tiovaldo",
+      "siapa tio",
+      "tentang tio",
+      "owner",
+      "pemilik website",
+      "pemilik web ini",
+      "siapa yang buat website ini",
+      "who is tiovaldo",
+      "who made this website",
+      "siapa pembuat web",
+      "siapa kamu sebenarnya"
     ],
     "answer_id": "Tiovaldo Sindovan Ratungalo adalah lulusan Sarjana Komputer dari Universitas Klabat tahun 2024 yang memiliki minat pada teknologi, AI, dan keamanan siber. Ia juga tertarik pada pengembangan front-end web dan AI development.",
     "answer_en": "Tiovaldo Sindovan Ratungalo is a Computer Science graduate from Klabat University (2024) with interests in technology, AI, and cybersecurity. He is also passionate about front-end web development and AI development.",
-    "suggestions": ["Profil lengkap", "Skill apa saja?", "Lihat project", "Pendidikan"]
+    "suggestions": [
+      "Profil lengkap",
+      "Skill apa saja?",
+      "Lihat project",
+      "Pendidikan"
+    ]
   },
   {
     "intent": "profile",
     "keywords": [
-      "profil", "tentang tiovaldo", "tentang tio", "about",
-      "background", "latar belakang", "biografi", "profile",
-      "bio", "ceritakan tentang", "tell me about", "describe",
-      "deskripsi", "perkenalan"
+      "profil",
+      "tentang tiovaldo",
+      "tentang tio",
+      "about",
+      "background",
+      "latar belakang",
+      "biografi",
+      "profile",
+      "bio",
+      "ceritakan tentang",
+      "tell me about",
+      "describe",
+      "deskripsi",
+      "perkenalan"
     ],
     "answer_id": "Tiovaldo adalah lulusan Computer Science dari Universitas Klabat yang fokus pada pengembangan web modern, AI, dan keamanan sistem. Ia menyukai belajar teknologi baru dan mengembangkan solusi digital yang inovatif serta user-friendly. Memiliki mindset analitis yang kuat dan kemampuan problem-solving yang baik.",
     "answer_en": "Tiovaldo is a Computer Science graduate from Klabat University focused on modern web development, AI, and system security. He enjoys learning new technologies and developing innovative, user-friendly digital solutions. He has a strong analytical mindset and solid problem-solving skills.",
-    "suggestions": ["Skill apa saja?", "Lihat project", "Kepribadian", "Pendidikan"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Lihat project",
+      "Kepribadian",
+      "Pendidikan"
+    ]
   },
   {
     "intent": "personality",
     "keywords": [
-      "kepribadian", "personality", "seperti apa", "orangnya bagaimana",
-      "karakter", "sifat", "character", "attitude",
-      "tipe orang", "what kind of person", "how is he"
+      "kepribadian",
+      "personality",
+      "seperti apa",
+      "orangnya bagaimana",
+      "karakter",
+      "sifat",
+      "character",
+      "attitude",
+      "tipe orang",
+      "what kind of person",
+      "how is he"
     ],
     "answer_id": "Tiovaldo dikenal sebagai pribadi yang disiplin, cepat belajar, dan senang mengeksplorasi teknologi baru. Ia memiliki mindset analitis yang kuat dan kemampuan problem-solving yang baik.",
     "answer_en": "Tiovaldo is known as a disciplined fast learner who enjoys exploring new technologies. He has a strong analytical mindset and solid problem-solving abilities.",
-    "suggestions": ["Kelebihan", "Skill apa saja?", "Pengalaman"]
+    "suggestions": [
+      "Kelebihan",
+      "Skill apa saja?",
+      "Pengalaman"
+    ]
   },
   {
     "intent": "strengths",
     "keywords": [
-      "kelebihan", "strength", "kelebihan tiovaldo", "keunggulan",
-      "nilai lebih", "strengths", "keunikan", "advantages",
-      "apa yang membedakan", "what makes him different",
-      "why is he good", "kenapa dia bagus"
+      "kelebihan",
+      "strength",
+      "kelebihan tiovaldo",
+      "keunggulan",
+      "nilai lebih",
+      "strengths",
+      "keunikan",
+      "advantages",
+      "apa yang membedakan",
+      "what makes him different",
+      "why is he good",
+      "kenapa dia bagus"
     ],
     "answer_id": "Kelebihan Tiovaldo adalah kemampuan belajar cepat, berpikir logis, serta mampu bekerja mandiri maupun dalam tim. Ia juga memiliki motivasi tinggi untuk berkembang dan adaptasi cepat terhadap teknologi baru.",
     "answer_en": "Tiovaldo's strengths are fast learning, logical thinking, and the ability to work independently or in a team. He is also highly motivated to grow and adapts quickly to new technologies.",
-    "suggestions": ["Kenapa harus hire?", "Skill apa saja?", "Pengalaman"]
+    "suggestions": [
+      "Kenapa harus hire?",
+      "Skill apa saja?",
+      "Pengalaman"
+    ]
   },
   {
     "intent": "skills_overview",
     "keywords": [
-      "skill", "skills", "keahlian", "kemampuan",
-      "apa saja skill", "bisa apa", "what can he do",
-      "kemampuan teknis", "technical skills", "skill apa",
-      "keahlian apa", "jago apa", "expertise",
-      "competency", "kompetensi", "bidang keahlian"
+      "skill",
+      "skills",
+      "keahlian",
+      "kemampuan",
+      "apa saja skill",
+      "bisa apa",
+      "what can he do",
+      "kemampuan teknis",
+      "technical skills",
+      "skill apa",
+      "keahlian apa",
+      "jago apa",
+      "expertise",
+      "competency",
+      "kompetensi",
+      "bidang keahlian"
     ],
     "answer_id": "Keahlian Tiovaldo meliputi:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• MS Office (90%)\n• Cybersecurity — dasar keamanan jaringan & perlindungan data\n• AI Development — chatbot & machine learning",
     "answer_en": "Tiovaldo's skills include:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• MS Office (90%)\n• Cybersecurity — network security & data protection basics\n• AI Development — chatbot & machine learning",
-    "suggestions": ["Frontend detail", "Backend detail", "AI detail", "Game Development"]
+    "suggestions": [
+      "Frontend detail",
+      "Backend detail",
+      "AI detail",
+      "Game Development"
+    ]
   },
   {
     "intent": "skill_web_development",
     "keywords": [
-      "frontend", "front end", "frontend developer", "fe dev",
-      "ui developer", "web development", "buat web", "website",
-      "web dev", "react", "next.js", "nextjs", "tailwind",
-      "typescript", "develop web", "membuat website"
+      "frontend",
+      "front end",
+      "frontend developer",
+      "fe dev",
+      "ui developer",
+      "web development",
+      "buat web",
+      "website",
+      "web dev",
+      "react",
+      "next.js",
+      "nextjs",
+      "tailwind",
+      "typescript",
+      "develop web",
+      "membuat website"
     ],
     "answer_id": "Tiovaldo mengembangkan website modern menggunakan React, Next.js, TypeScript, dan Tailwind CSS untuk tampilan yang responsif dan profesional. Skill Web Development-nya berada di level 70%.",
     "answer_en": "Tiovaldo builds modern websites using React, Next.js, TypeScript, and Tailwind CSS for responsive and professional interfaces. His Web Development skill is at 70%.",
-    "suggestions": ["Tech stack detail", "Backend detail", "Lihat project"]
+    "suggestions": [
+      "Tech stack detail",
+      "Backend detail",
+      "Lihat project"
+    ]
   },
   {
     "intent": "skill_backend",
     "keywords": [
-      "backend", "server", "api", "database",
-      "backend developer", "rest api", "mysql",
-      "back end", "server side", "pengolahan data",
+      "backend",
+      "server",
+      "api",
+      "database",
+      "backend developer",
+      "rest api",
+      "mysql",
+      "back end",
+      "server side",
+      "pengolahan data",
       "data processing"
     ],
     "answer_id": "Tiovaldo memahami backend dasar termasuk pembuatan API, pengolahan data, dan pengelolaan database MySQL.",
     "answer_en": "Tiovaldo understands backend fundamentals, including API development, data processing, and MySQL database management.",
-    "suggestions": ["Frontend detail", "Tech stack", "Lihat project"]
+    "suggestions": [
+      "Frontend detail",
+      "Tech stack",
+      "Lihat project"
+    ]
   },
   {
     "intent": "skill_ai",
     "keywords": [
-      "ai", "machine learning", "artificial intelligence",
-      "chatbot", "kecerdasan buatan", "ml", "deep learning",
-      "neural network", "ai development", "belajar mesin",
+      "ai",
+      "machine learning",
+      "artificial intelligence",
+      "chatbot",
+      "kecerdasan buatan",
+      "ml",
+      "deep learning",
+      "neural network",
+      "ai development",
+      "belajar mesin",
       "pengembangan ai"
     ],
     "answer_id": "Tiovaldo tertarik pada Artificial Intelligence dan telah membangun AI Virtual Assistant berbasis chatbot. Ia juga berpengalaman dengan machine learning dan klasifikasi data.",
     "answer_en": "Tiovaldo is interested in Artificial Intelligence and has built a chatbot-based AI Virtual Assistant. He also has experience with machine learning and data classification.",
-    "suggestions": ["Project AI Assistant", "Lihat semua project", "Tech stack"]
+    "suggestions": [
+      "Project AI Assistant",
+      "Lihat semua project",
+      "Tech stack"
+    ]
   },
   {
     "intent": "skill_cybersecurity",
     "keywords": [
-      "cyber", "security", "cybersecurity", "keamanan",
-      "network security", "keamanan jaringan", "infosec",
-      "cyber security", "hacking", "penetration testing",
-      "keamanan data", "data security", "keamanan siber"
+      "cyber",
+      "security",
+      "cybersecurity",
+      "keamanan",
+      "network security",
+      "keamanan jaringan",
+      "infosec",
+      "cyber security",
+      "hacking",
+      "penetration testing",
+      "keamanan data",
+      "data security",
+      "keamanan siber"
     ],
     "answer_id": "Tiovaldo memiliki pengetahuan dasar cybersecurity termasuk network security dan perlindungan data. Ia juga tertarik menjadi Cyber Security Analyst.",
     "answer_en": "Tiovaldo has foundational cybersecurity knowledge, including network security and data protection. He is also interested in becoming a Cyber Security Analyst.",
-    "suggestions": ["Skill apa saja?", "Posisi kerja", "Pengalaman"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Posisi kerja",
+      "Pengalaman"
+    ]
   },
   {
     "intent": "skill_game_dev",
     "keywords": [
-      "game development", "game dev", "unity", "c#",
-      "buat game", "game developer", "develop game",
-      "bikin game", "game programming", "membuat game"
+      "game development",
+      "game dev",
+      "unity",
+      "c#",
+      "buat game",
+      "game developer",
+      "develop game",
+      "bikin game",
+      "game programming",
+      "membuat game"
     ],
     "answer_id": "Tiovaldo mengembangkan game 2D dan 3D menggunakan Unity dan C#, termasuk sistem fisika, pencahayaan realistis, dan efek partikel. Skill Game Development-nya berada di level 65%.",
     "answer_en": "Tiovaldo develops 2D and 3D games using Unity and C#, including physics systems, realistic lighting, and particle effects. His Game Development skill is at 65%.",
-    "suggestions": ["Project game", "Lihat semua project", "Skill lainnya"]
+    "suggestions": [
+      "Project game",
+      "Lihat semua project",
+      "Skill lainnya"
+    ]
   },
   {
     "intent": "skill_mobile_dev",
     "keywords": [
-      "mobile development", "mobile dev", "android", "react native",
-      "mobile app", "aplikasi mobile", "android studio",
-      "mobile developer", "buat aplikasi", "app development",
-      "pengembangan mobile", "bikin app"
+      "mobile development",
+      "mobile dev",
+      "android",
+      "react native",
+      "mobile app",
+      "aplikasi mobile",
+      "android studio",
+      "mobile developer",
+      "buat aplikasi",
+      "app development",
+      "pengembangan mobile",
+      "bikin app"
     ],
     "answer_id": "Tiovaldo memiliki kemampuan Mobile Development menggunakan React Native dan Android Studio. Skill-nya berada di level 65%. Ia telah membangun AI Virtual Assistant berbasis mobile.",
     "answer_en": "Tiovaldo has Mobile Development skills using React Native and Android Studio, at a 65% level. He has built a mobile-based AI Virtual Assistant.",
-    "suggestions": ["Project AI Assistant", "Skill lainnya", "Lihat semua project"]
+    "suggestions": [
+      "Project AI Assistant",
+      "Skill lainnya",
+      "Lihat semua project"
+    ]
   },
   {
     "intent": "skill_ms_office",
     "keywords": [
-      "ms office", "microsoft office", "office", "word", "excel",
-      "powerpoint", "administrasi", "office skills"
+      "ms office",
+      "microsoft office",
+      "office",
+      "word",
+      "excel",
+      "powerpoint",
+      "administrasi",
+      "office skills"
     ],
     "answer_id": "Tiovaldo sangat mahir menggunakan MS Office dengan level kemampuan 90%, mencakup Word, Excel, dan PowerPoint.",
     "answer_en": "Tiovaldo is highly proficient in MS Office at a 90% skill level, including Word, Excel, and PowerPoint.",
-    "suggestions": ["Skill apa saja?", "Pengalaman", "Posisi kerja"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Pengalaman",
+      "Posisi kerja"
+    ]
   },
   {
     "intent": "projects_overview",
     "keywords": [
-      "project", "portfolio", "proyek", "karya",
-      "hasil kerja", "portofolio", "project apa saja",
-      "projects", "daftar project", "list project",
-      "show projects", "lihat project", "karya apa saja",
+      "project",
+      "portfolio",
+      "proyek",
+      "karya",
+      "hasil kerja",
+      "portofolio",
+      "project apa saja",
+      "projects",
+      "daftar project",
+      "list project",
+      "show projects",
+      "lihat project",
+      "karya apa saja",
       "apa saja yang pernah dibuat"
     ],
-    "answer_id": "Proyek Tiovaldo mencakup:\n• AI Virtual Assistant — chatbot rumah sakit dengan voice input/output\n• Game 3D Energy Ball — game dengan shader effects & dynamic lighting\n• Game 2D Platformer — platformer dengan efek cahaya & partikel\n• 3D Airplane Controller — game kontrol pesawat\n• 3D Ball Collector — game mengumpulkan objek di arena\n• Pemodelan 3D Blender — model mobil untuk aset game/animasi\n• Robotika Webots — robot simulasi dengan sensor jarak\n• Game Interface Design — desain menu game\n• Simple 3D Game — game 3D sederhana di Unity",
-    "answer_en": "Tiovaldo's projects include:\n• AI Virtual Assistant — hospital chatbot with voice input/output\n• 3D Energy Ball Game — with shader effects & dynamic lighting\n• 2D Platformer Game — with light & particle effects\n• 3D Airplane Controller — aircraft control game\n• 3D Ball Collector — object collection arena game\n• Blender 3D Modeling — car model for game/animation assets\n• Webots Robotics — simulated robot with distance sensors\n• Game Interface Design — game menu UI\n• Simple 3D Game — basic 3D game in Unity",
-    "suggestions": ["Project AI Assistant", "Project game", "Project robotika", "Project 3D modeling"]
+    "answer_id": "Proyek Tiovaldo mencakup:\n• AI Virtual Assistant — aplikasi mobile dengan fitur chatbot suara untuk jadwal dokter dan layanan rumah sakit.\n• 3D Modeling — pembuatan model mobil 3D menggunakan Blender.\n• 3D Energy Ball — game dengan efek shader & pencahayaan dinamis (Unity).\n• Robotika Webots — simulasi robot E-puck yang diprogram dengan C.\n• 3D Airplane Controller — game simulasi kontrol pesawat 3D (Unity).\n• Trading Simulation — web simulasi trading saham & kripto secara real-time.\n• AutoClip — aplikasi web otomatis untuk memotong video YouTube (Python).\n• ViralWave — aplikasi web untuk mendengarkan lagu-lagu viral & trending.\n• JFast — aplikasi web interaktif untuk belajar bahasa Jepang.",
+    "answer_en": "Tiovaldo's projects include:\n• AI Virtual Assistant — a mobile app with voice chatbot for doctor schedules and hospital services.\n• 3D Modeling — 3D car model creation using Blender.\n• 3D Energy Ball — game with shader effects & dynamic lighting (Unity).\n• Webots Robotics — E-puck robot simulation programmed in C.\n• 3D Airplane Controller — 3D flight control simulation game (Unity).\n• Trading Simulation — real-time web-based stock & crypto trading simulation.\n• AutoClip — web app for automatically clipping YouTube videos (Python).\n• ViralWave — web app for discovering and listening to trending songs.\n• JFast — an interactive web application for learning Japanese.",
+    "suggestions": [
+      "Project AI Assistant",
+      "Project Web",
+      "Project Game",
+      "Project 3D Modeling"
+    ]
   },
   {
     "intent": "project_virtual_assistant",
     "keywords": [
-      "virtual assistant", "ai assistant", "rumah sakit",
-      "hospital assistant", "chatbot rumah sakit", "mobile app",
-      "project ai", "aplikasi rumah sakit", "jadwal dokter",
+      "virtual assistant",
+      "ai assistant",
+      "rumah sakit",
+      "hospital assistant",
+      "chatbot rumah sakit",
+      "mobile app",
+      "project ai",
+      "aplikasi rumah sakit",
+      "jadwal dokter",
       "doctor schedule"
     ],
     "answer_id": "AI Virtual Assistant adalah aplikasi mobile yang membantu pengguna mendapatkan informasi jadwal dokter, lokasi ruangan, dan layanan rumah sakit melalui chat dan suara. Dibangun menggunakan Android Studio, React Native, Java, Speech Recognition, dan Speech Synthesis.",
     "answer_en": "The AI Virtual Assistant is a mobile app that helps users get doctor schedules, room locations, and hospital service information through chat and voice. Built with Android Studio, React Native, Java, Speech Recognition, and Speech Synthesis.",
-    "suggestions": ["Lihat semua project", "Skill AI", "Skill Mobile"]
+    "suggestions": [
+      "Lihat semua project",
+      "Skill AI",
+      "Skill Mobile"
+    ]
   },
   {
     "intent": "project_energy_ball",
     "keywords": [
-      "energy ball", "3d energy ball", "shader effects",
-      "dynamic lighting", "game 3d", "game fisika",
+      "energy ball",
+      "3d energy ball",
+      "shader effects",
+      "dynamic lighting",
+      "game 3d",
+      "game fisika",
       "physics game"
     ],
     "answer_id": "3D Energy Ball adalah game dengan shader effects dan dynamic lighting. Game ini dirancang untuk mempelajari kontrol fisika objek dalam lingkungan 3D. Dibangun menggunakan Unity dan C#.",
     "answer_en": "3D Energy Ball is a game with shader effects and dynamic lighting, designed to learn object physics control in a 3D environment. Built with Unity and C#.",
-    "suggestions": ["Project game lainnya", "Lihat semua project", "Skill Game Dev"]
-  },
-  {
-    "intent": "project_2d_platformer",
-    "keywords": [
-      "2d platformer", "platformer", "game 2d",
-      "jumping game", "item collection", "efek partikel",
-      "particle effects"
-    ],
-    "answer_id": "Game 2D Platformer ini memiliki efek cahaya dan partikel menggunakan Unity. Fokus pada mekanik lompat dan pengumpulan item. Dibangun dengan Unity dan C#.",
-    "answer_en": "This 2D Platformer game features light and particle effects in Unity, focused on jumping mechanics and item collection. Built with Unity and C#.",
-    "suggestions": ["Project game lainnya", "Lihat semua project"]
+    "suggestions": [
+      "Project game lainnya",
+      "Lihat semua project",
+      "Skill Game Dev"
+    ]
   },
   {
     "intent": "project_airplane",
     "keywords": [
-      "airplane", "pesawat", "airplane controller",
-      "3d airplane", "game pesawat", "flight game",
+      "airplane",
+      "pesawat",
+      "airplane controller",
+      "3d airplane",
+      "game pesawat",
+      "flight game",
       "kontrol pesawat"
     ],
     "answer_id": "3D Airplane Controller adalah game kontrol pesawat 3D yang dikembangkan di Unity menggunakan C#.",
     "answer_en": "3D Airplane Controller is a 3D aircraft control game developed in Unity with C#.",
-    "suggestions": ["Project game lainnya", "Lihat semua project"]
+    "suggestions": [
+      "Project game lainnya",
+      "Lihat semua project"
+    ]
   },
   {
-    "intent": "project_ball_collector",
+    "intent": "project_trading_simulation",
     "keywords": [
-      "ball collector", "kumpulkan objek", "arena game",
-      "collecting game", "3d ball", "game bola"
+      "trading",
+      "trading simulation",
+      "simulasi trading",
+      "saham",
+      "crypto",
+      "kripto",
+      "web trading",
+      "bursa saham"
     ],
-    "answer_id": "3D Ball Collector adalah game di mana pemain mengontrol bola untuk mengumpulkan objek di arena. Dibangun dengan Unity dan C#.",
-    "answer_en": "3D Ball Collector is a game where players control a ball to collect objects in an arena. Built with Unity and C#.",
-    "suggestions": ["Project game lainnya", "Lihat semua project"]
+    "answer_id": "Trading Simulation adalah platform simulasi berbasis web yang memungkinkan pengguna berlatih trading saham dan kripto tanpa risiko, dilengkapi dengan visualisasi data pasar secara real-time. Dibangun menggunakan JavaScript, HTML, dan CSS.",
+    "answer_en": "Trading Simulation is a web-based platform that lets users practice stock and crypto trading in a risk-free virtual environment with real-time market data visualization. Built with JavaScript, HTML, and CSS.",
+    "suggestions": [
+      "Project Web",
+      "Lihat semua project"
+    ]
+  },
+  {
+    "intent": "project_autoclip",
+    "keywords": [
+      "autoclip",
+      "auto clip",
+      "potong video",
+      "youtube clipper",
+      "download video",
+      "potong youtube",
+      "video otomatis"
+    ],
+    "answer_id": "AutoClip adalah aplikasi web yang secara otomatis dapat memotong dan mengunduh video dari YouTube. Pengguna dapat memilih stempel waktu (timestamp) tertentu dan mengekstrak segmen video dengan mudah. Dibangun dengan Python.",
+    "answer_en": "AutoClip is a web application that automatically clips and downloads videos from YouTube. Users can select specific timestamps and extract video segments effortlessly. Built with Python.",
+    "suggestions": [
+      "Project Web",
+      "Lihat semua project"
+    ]
+  },
+  {
+    "intent": "project_viralwave",
+    "keywords": [
+      "viralwave",
+      "viral wave",
+      "musik viral",
+      "lagu trending",
+      "streaming musik",
+      "dengar lagu",
+      "lagu viral"
+    ],
+    "answer_id": "ViralWave adalah aplikasi web yang merekomendasikan lagu-lagu terbaru yang sedang viral dan trending. Pengguna dapat menemukan apa yang sedang tren dan langsung mendengarkannya. Dibangun dengan TypeScript dan React Native (Web).",
+    "answer_en": "ViralWave is a web app that recommends and lets you listen to the latest viral and trending songs. Discover what's trending and stream music that's going viral right now. Built with TypeScript and React Native (Web).",
+    "suggestions": [
+      "Project Web",
+      "Lihat semua project"
+    ]
+  },
+  {
+    "intent": "project_jfast",
+    "keywords": [
+      "jfast",
+      "belajar jepang",
+      "bahasa jepang",
+      "learning japanese",
+      "japanese app",
+      "kosakata jepang"
+    ],
+    "answer_id": "JFast adalah aplikasi web yang dirancang untuk membantu pengguna belajar bahasa Jepang dengan efisien. Menampilkan pelajaran interaktif, latihan kosakata, dan pelacakan kemajuan belajar. Dibangun dengan TypeScript.",
+    "answer_en": "JFast is a web application designed to help users learn the Japanese language efficiently. Features interactive lessons, vocabulary practice, and progress tracking. Built with TypeScript.",
+    "suggestions": [
+      "Project Web",
+      "Lihat semua project"
+    ]
   },
   {
     "intent": "project_robotics",
     "keywords": [
-      "robot", "robotika", "webots", "robotics", "simulasi robot",
-      "e-puck", "sensor jarak", "autonomous", "robot virtual",
-      "distance sensor", "navigasi otomatis"
+      "robot",
+      "robotika",
+      "webots",
+      "robotics",
+      "simulasi robot",
+      "e-puck",
+      "sensor jarak",
+      "autonomous",
+      "robot virtual",
+      "distance sensor",
+      "navigasi otomatis"
     ],
     "answer_id": "Proyek robotika menggunakan Webots Simulator. Robot E-puck diprogram dalam bahasa C untuk membaca sensor jarak dan bergerak secara otomatis dalam arena simulasi.",
     "answer_en": "Robotics project using Webots Simulator. The E-puck robot is programmed in C to read distance sensors and move autonomously within the simulation arena.",
-    "suggestions": ["Lihat semua project", "Skill apa saja?", "Tech stack"]
+    "suggestions": [
+      "Lihat semua project",
+      "Skill apa saja?",
+      "Tech stack"
+    ]
   },
   {
     "intent": "project_3d_modeling",
     "keywords": [
-      "3d", "blender", "model 3d", "3d modeling", "desain 3d",
-      "3d model", "model mobil", "car model", "3d car",
-      "aset game", "game asset", "animasi 3d"
+      "3d",
+      "blender",
+      "model 3d",
+      "3d modeling",
+      "desain 3d",
+      "3d model",
+      "model mobil",
+      "car model",
+      "3d car",
+      "aset game",
+      "game asset",
+      "animasi 3d"
     ],
     "answer_id": "Tiovaldo membuat model 3D menggunakan Blender, seperti model mobil yang dapat digunakan sebagai aset game atau animasi.",
     "answer_en": "Tiovaldo creates 3D models with Blender, such as car models that can be used as assets for games or animation.",
-    "suggestions": ["Lihat semua project", "Game Development", "Tech stack"]
-  },
-  {
-    "intent": "project_game_interface",
-    "keywords": [
-      "game interface", "game menu", "game ui",
-      "menu utama game", "main menu game", "ui toolkit",
-      "desain menu"
-    ],
-    "answer_id": "Project desain interface menu utama game yang sederhana dengan tiga tombol utama: Start, Settings, dan Exit. Dibangun menggunakan Unity UI Toolkit.",
-    "answer_en": "A simple game main menu interface design with three main buttons: Start, Settings, and Exit. Built with Unity UI Toolkit.",
-    "suggestions": ["Lihat semua project", "Game Development"]
+    "suggestions": [
+      "Lihat semua project",
+      "Game Development",
+      "Tech stack"
+    ]
   },
   {
     "intent": "tech_stack",
     "keywords": [
-      "tools", "tech stack", "teknologi", "stack",
-      "tools apa", "pakai teknologi apa", "technology",
-      "tech yang dipakai", "framework", "bahasa pemrograman",
-      "programming language", "tools yang digunakan"
+      "tools",
+      "tech stack",
+      "teknologi",
+      "stack",
+      "tools apa",
+      "pakai teknologi apa",
+      "technology",
+      "tech yang dipakai",
+      "framework",
+      "bahasa pemrograman",
+      "programming language",
+      "tools yang digunakan"
     ],
     "answer_id": "Teknologi yang digunakan Tiovaldo meliputi:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotika: C, Webots Simulator\n• Lainnya: MS Office",
     "answer_en": "Technologies used by Tiovaldo include:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotics: C, Webots Simulator\n• Other: MS Office",
-    "suggestions": ["Frontend detail", "Backend detail", "Skill apa saja?"]
+    "suggestions": [
+      "Frontend detail",
+      "Backend detail",
+      "Skill apa saja?"
+    ]
   },
   {
     "intent": "website_tech",
     "keywords": [
-      "website ini dibuat pakai apa", "web ini pakai apa",
-      "tech stack website ini", "dibuat pakai framework apa",
-      "what is this website built with", "how was this site made",
+      "website ini dibuat pakai apa",
+      "web ini pakai apa",
+      "tech stack website ini",
+      "dibuat pakai framework apa",
+      "what is this website built with",
+      "how was this site made",
       "teknologi website ini"
     ],
     "answer_id": "Website portfolio ini dibangun menggunakan TypeScript, Tailwind CSS, Next.js, dan React. Dengan tambahan animasi dari Framer Motion dan Three.js untuk efek visual 3D.",
     "answer_en": "This portfolio website is built with TypeScript, Tailwind CSS, Next.js, and React. It also uses Framer Motion animations and Three.js for 3D visual effects.",
-    "suggestions": ["Frontend detail", "Tech stack lengkap", "Lihat project"]
+    "suggestions": [
+      "Frontend detail",
+      "Tech stack lengkap",
+      "Lihat project"
+    ]
   },
   {
     "intent": "experience",
     "keywords": [
-      "experience", "pengalaman", "pengalaman kerja",
-      "experience apa", "sudah pernah kerja", "work experience",
-      "riwayat kerja", "pernah bekerja dimana", "career",
-      "karir", "internship", "magang"
+      "experience",
+      "pengalaman",
+      "pengalaman kerja",
+      "experience apa",
+      "sudah pernah kerja",
+      "work experience",
+      "riwayat kerja",
+      "pernah bekerja dimana",
+      "career",
+      "karir",
+      "internship",
+      "magang"
     ],
     "answer_id": "Sebagai fresh graduate, Tiovaldo memiliki pengalaman proyek nyata dalam pengembangan AI, web, game, mobile, dan sistem interaktif. Ia siap berkembang dan berkontribusi di dunia profesional IT.",
     "answer_en": "As a fresh graduate, Tiovaldo has real project experience in AI development, web development, game development, mobile development, and interactive systems. He is ready to grow and contribute in the professional IT world.",
-    "suggestions": ["Lihat project", "Skill apa saja?", "Kenapa harus hire?"]
+    "suggestions": [
+      "Lihat project",
+      "Skill apa saja?",
+      "Kenapa harus hire?"
+    ]
   },
   {
     "intent": "fresh_graduate",
     "keywords": [
-      "fresh graduate", "lulusan baru", "baru lulus",
-      "new graduate", "freshgrad", "fresh grad",
-      "baru selesai kuliah", "just graduated"
+      "fresh graduate",
+      "lulusan baru",
+      "baru lulus",
+      "new graduate",
+      "freshgrad",
+      "fresh grad",
+      "baru selesai kuliah",
+      "just graduated"
     ],
     "answer_id": "Ya, Tiovaldo adalah fresh graduate dari Universitas Klabat (2024) yang siap berkembang dan berkontribusi di dunia profesional IT.",
     "answer_en": "Yes, Tiovaldo is a fresh graduate from Klabat University (2024) who is ready to grow and contribute in the professional IT world.",
-    "suggestions": ["Pendidikan", "Pengalaman", "Posisi kerja"]
+    "suggestions": [
+      "Pendidikan",
+      "Pengalaman",
+      "Posisi kerja"
+    ]
   },
   {
     "intent": "why_hire",
     "keywords": [
-      "kenapa harus hire", "why hire", "alasan merekrut",
-      "kenapa pilih dia", "why choose", "why should i hire",
-      "alasan memilih", "kenapa harus rekrut",
-      "what makes him stand out", "apa yang membedakan"
+      "kenapa harus hire",
+      "why hire",
+      "alasan merekrut",
+      "kenapa pilih dia",
+      "why choose",
+      "why should i hire",
+      "alasan memilih",
+      "kenapa harus rekrut",
+      "what makes him stand out",
+      "apa yang membedakan"
     ],
     "answer_id": "Tiovaldo memiliki kombinasi kemampuan teknis yang beragam (web, mobile, game, AI), kemauan belajar tinggi, dan adaptasi cepat terhadap teknologi baru. Ia mampu bekerja mandiri maupun dalam tim dengan mindset analitis yang kuat.",
     "answer_en": "Tiovaldo offers a strong combination of diverse technical abilities (web, mobile, game, AI), a high willingness to learn, and fast adaptation to new technologies. He can work independently or in a team with a strong analytical mindset.",
-    "suggestions": ["Skill apa saja?", "Lihat project", "Cara kontak"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Lihat project",
+      "Cara kontak"
+    ]
   },
   {
     "intent": "job_position",
     "keywords": [
-      "job", "hire", "open to work", "lowongan",
-      "kerja", "rekrut", "pekerjaan", "posisi",
-      "position", "role", "jabatan", "cari kerja",
-      "looking for job", "job openings", "karir apa",
+      "job",
+      "hire",
+      "open to work",
+      "lowongan",
+      "kerja",
+      "rekrut",
+      "pekerjaan",
+      "posisi",
+      "position",
+      "role",
+      "jabatan",
+      "cari kerja",
+      "looking for job",
+      "job openings",
+      "karir apa",
       "mau kerja sebagai apa"
     ],
     "answer_id": "Tiovaldo terbuka untuk peluang kerja sebagai:\n• Front-End Developer\n• Mobile Developer\n• Cyber Security Analyst\n• IT Support\n• Atau posisi terkait teknologi lainnya",
     "answer_en": "Tiovaldo is open to job opportunities as:\n• Front-End Developer\n• Mobile Developer\n• Cyber Security Analyst\n• IT Support\n• Or other technology-related roles",
-    "suggestions": ["Skill apa saja?", "Kenapa harus hire?", "Cara kontak"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Kenapa harus hire?",
+      "Cara kontak"
+    ]
   },
   {
     "intent": "remote_work",
     "keywords": [
-      "remote", "kerja remote", "work from home", "wfh",
-      "onsite", "on site", "hybrid", "kerja jarak jauh",
-      "bisa remote", "can work remotely"
+      "remote",
+      "kerja remote",
+      "work from home",
+      "wfh",
+      "onsite",
+      "on site",
+      "hybrid",
+      "kerja jarak jauh",
+      "bisa remote",
+      "can work remotely"
     ],
     "answer_id": "Tiovaldo terbuka untuk pekerjaan remote maupun on-site sesuai kebutuhan perusahaan.",
     "answer_en": "Tiovaldo is open to both remote and on-site work depending on company needs.",
-    "suggestions": ["Posisi kerja", "Cara kontak", "Kenapa harus hire?"]
+    "suggestions": [
+      "Posisi kerja",
+      "Cara kontak",
+      "Kenapa harus hire?"
+    ]
   },
   {
     "intent": "contact",
     "keywords": [
-      "contact", "kontak", "email", "hubungi",
-      "reach", "cara hubungi", "how to contact",
-      "cara menghubungi", "kirim pesan", "send message",
-      "get in touch", "contact form", "form kontak",
-      "mau hubungi", "kontak tiovaldo"
+      "contact",
+      "kontak",
+      "email",
+      "hubungi",
+      "reach",
+      "cara hubungi",
+      "how to contact",
+      "cara menghubungi",
+      "kirim pesan",
+      "send message",
+      "get in touch",
+      "contact form",
+      "form kontak",
+      "mau hubungi",
+      "kontak tiovaldo"
     ],
     "answer_id": "Kamu dapat menghubungi Tiovaldo melalui:\n• Form Contact di website ini (scroll ke bawah)\n• LinkedIn\n• GitHub\n• Instagram\n\nSilakan kirim pesan langsung!",
     "answer_en": "You can contact Tiovaldo through:\n• The Contact form on this website (scroll down)\n• LinkedIn\n• GitHub\n• Instagram\n\nFeel free to send a message!",
-    "suggestions": ["Social media", "Download CV", "Posisi kerja"]
+    "suggestions": [
+      "Social media",
+      "Download CV",
+      "Posisi kerja"
+    ]
   },
   {
     "intent": "social_media",
     "keywords": [
-      "social media", "sosial media", "instagram", "github",
-      "linkedin", "twitter", "x.com", "medsos",
-      "akun sosial", "social accounts", "follow",
-      "ig", "socmed"
+      "social media",
+      "sosial media",
+      "instagram",
+      "github",
+      "linkedin",
+      "twitter",
+      "x.com",
+      "medsos",
+      "akun sosial",
+      "social accounts",
+      "follow",
+      "ig",
+      "socmed"
     ],
     "answer_id": "Akun sosial media Tiovaldo:\n• Instagram: @tiovaldoo\n• GitHub: TiovaldoRatungalo\n• LinkedIn: tersedia di footer website\n• X (Twitter): tersedia di footer website",
     "answer_en": "Tiovaldo's social media accounts:\n• Instagram: @tiovaldoo\n• GitHub: TiovaldoRatungalo\n• LinkedIn: available in the website footer\n• X (Twitter): available in the website footer",
-    "suggestions": ["Cara kontak", "Download CV", "Lihat project"]
+    "suggestions": [
+      "Cara kontak",
+      "Download CV",
+      "Lihat project"
+    ]
   },
   {
     "intent": "education",
     "keywords": [
-      "pendidikan", "kuliah dimana", "universitas", "kampus",
-      "gelar", "jurusan", "education", "study",
-      "lulusan mana", "sekolah", "university", "college",
-      "degree", "sarjana", "s1", "bachelor",
-      "klabat", "universitas klabat"
+      "pendidikan",
+      "kuliah dimana",
+      "universitas",
+      "kampus",
+      "gelar",
+      "jurusan",
+      "education",
+      "study",
+      "lulusan mana",
+      "sekolah",
+      "university",
+      "college",
+      "degree",
+      "sarjana",
+      "s1",
+      "bachelor",
+      "klabat",
+      "universitas klabat"
     ],
     "answer_id": "Tiovaldo adalah alumni Universitas Klabat dengan gelar Sarjana Komputer (S.Kom) di bidang Ilmu Komputer / Computer Science, lulus tahun 2024.",
     "answer_en": "Tiovaldo is a Klabat University alumnus with a Bachelor's degree in Computer Science (S.Kom), graduated in 2024.",
-    "suggestions": ["Skill apa saja?", "Pengalaman", "Lihat project"]
+    "suggestions": [
+      "Skill apa saja?",
+      "Pengalaman",
+      "Lihat project"
+    ]
   },
   {
     "intent": "cv_resume",
     "keywords": [
-      "cv", "resume", "download cv", "lihat cv",
-      "unduh cv", "curriculum vitae", "download resume",
-      "bisa lihat cv", "ada cv", "minta cv"
+      "cv",
+      "resume",
+      "download cv",
+      "lihat cv",
+      "unduh cv",
+      "curriculum vitae",
+      "download resume",
+      "bisa lihat cv",
+      "ada cv",
+      "minta cv"
     ],
     "answer_id": "CV Tiovaldo dapat diunduh melalui tombol 'Download CV' pada halaman utama website (bagian Hero section di atas).",
     "answer_en": "Tiovaldo's CV can be downloaded using the 'Download CV' button on the website's main page (Hero section at the top).",
-    "suggestions": ["Cara kontak", "Skill apa saja?", "Posisi kerja"]
+    "suggestions": [
+      "Cara kontak",
+      "Skill apa saja?",
+      "Posisi kerja"
+    ]
   },
   {
     "intent": "location",
     "keywords": [
-      "lokasi", "tinggal dimana", "domisili", "berasal dari mana",
-      "location", "where is he", "based in", "alamat",
-      "address", "dari mana", "asal", "kota"
+      "lokasi",
+      "tinggal dimana",
+      "domisili",
+      "berasal dari mana",
+      "location",
+      "where is he",
+      "based in",
+      "alamat",
+      "address",
+      "dari mana",
+      "asal",
+      "kota"
     ],
     "answer_id": "Tiovaldo berdomisili di Sulawesi Utara, Indonesia.",
     "answer_en": "Tiovaldo is based in North Sulawesi, Indonesia.",
-    "suggestions": ["Bisa remote?", "Cara kontak", "Posisi kerja"]
+    "suggestions": [
+      "Bisa remote?",
+      "Cara kontak",
+      "Posisi kerja"
+    ]
   },
   {
     "intent": "language_preference",
     "keywords": [
-      "bahasa", "language", "bahasa indonesia", "english",
-      "bisa bahasa apa", "pakai bahasa apa", "ganti bahasa",
-      "switch language", "indonesian"
+      "bahasa",
+      "language",
+      "bahasa indonesia",
+      "english",
+      "bisa bahasa apa",
+      "pakai bahasa apa",
+      "ganti bahasa",
+      "switch language",
+      "indonesian"
     ],
     "answer_id": "Saya bisa menjawab dalam Bahasa Indonesia dan English! Saya akan otomatis mendeteksi bahasa yang kamu gunakan. 🌐",
     "answer_en": "I can respond in both Indonesian and English! I'll automatically detect the language you're using. 🌐",
-    "suggestions": ["Siapa Tiovaldo?", "Skill apa saja?", "Lihat project"]
+    "suggestions": [
+      "Siapa Tiovaldo?",
+      "Skill apa saja?",
+      "Lihat project"
+    ]
   },
   {
     "intent": "goodbye",
     "keywords": [
-      "bye", "goodbye", "dadah", "sampai jumpa",
-      "see you", "selamat tinggal", "pamit",
-      "udah cukup", "sudah cukup", "that's all"
+      "bye",
+      "goodbye",
+      "dadah",
+      "sampai jumpa",
+      "see you",
+      "selamat tinggal",
+      "pamit",
+      "udah cukup",
+      "sudah cukup",
+      "that's all"
     ],
     "answer_id": "Sampai jumpa! 👋 Terima kasih sudah mengunjungi portfolio Tiovaldo. Semoga informasinya bermanfaat!",
     "answer_en": "Goodbye! 👋 Thanks for visiting Tiovaldo's portfolio. Hope the information was helpful!",
-    "suggestions": ["Cara kontak", "Download CV"]
+    "suggestions": [
+      "Cara kontak",
+      "Download CV"
+    ]
   }
 ]

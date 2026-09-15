@@ -45,7 +45,8 @@ const StrokeText = ({
     () => ({
       fontSize: `${fontSize}px`,
       fontWeight,
-      letterSpacing: `${letterSpacing}px`
+      letterSpacing: `${letterSpacing}px`,
+      fontFamily: 'inherit'
     }),
     [fontSize, fontWeight, letterSpacing]
   );
