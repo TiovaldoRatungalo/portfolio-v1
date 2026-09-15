@@ -1056,10 +1056,6 @@ export default function Home() {
           {/* Contact Form Card */}
           <motion.div
             className="w-full lg:w-1/2 max-w-xl mx-auto glass-card text-card-foreground p-6 rounded-xl relative z-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.02 }}
           >
             {/* Header — hanya icon mail + judul */}

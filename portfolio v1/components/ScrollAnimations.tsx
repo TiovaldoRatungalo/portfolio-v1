@@ -27,7 +27,7 @@ export default function ScrollAnimations() {
       // 1. SECTION HEADINGS — each h2/h3 inside non-hero sections
       // ─────────────────────────────────────────────────────────────────────
       gsap.utils.toArray<HTMLElement>(
-        "#about h2, #about h3, #project h2, #contact h2"
+        "#about h2, #about h3, #project h2"
       ).forEach((el) => {
         gsap.from(el, {
           ...fadeUp,
@@ -98,25 +98,7 @@ export default function ScrollAnimations() {
         });
       }
 
-      // ─────────────────────────────────────────────────────────────────────
-      // 5. CONTACT FORM — slide up
-      // ─────────────────────────────────────────────────────────────────────
-      const contactCard = document.querySelector<HTMLElement>(
-        "#contact .glass-card"
-      );
-      if (contactCard) {
-        gsap.from(contactCard, {
-          opacity: 0,
-          y: 50,
-          duration: 0.75,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: contactCard,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
+
 
       // ─────────────────────────────────────────────────────────────────────
       // 6. ABOUT IMAGE — parallax (desktop only)

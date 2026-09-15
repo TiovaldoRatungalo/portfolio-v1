@@ -6,19 +6,8 @@ export default function LoadingScreen({ onFinish }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (isIOS) {
-      setIsLoading(true);
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-        onFinish?.();
-      }, 2500);
-
-      return () => clearTimeout(timer);
-    } else {
-      onFinish?.();
-    }
+    // Removed iOS specific loading screen as requested
+    onFinish?.();
   }, []);
 
   return (
