@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
@@ -42,7 +43,9 @@ export default function RootLayout({
             {/* Smooth scroll + GSAP scroll animations — purely behavioral */}
             <SmoothScrollProvider />
             <ScrollAnimations />
-            <LoadingScreen />
+            <Suspense fallback={null}>
+              <LoadingScreen />
+            </Suspense>
             <MainContentWrapper>
               {children}
             </MainContentWrapper>

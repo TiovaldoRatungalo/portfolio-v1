@@ -1,4 +1,8 @@
 import { NextResponse } from "next/server";
+
+// Force dynamic: this is a POST-only API route that reads from fs at module level.
+// Static generation must be skipped — otherwise Next.js build will fail.
+export const dynamic = "force-dynamic";
 import fs from "fs";
 import path from "path";
 import Fuse from "fuse.js";
