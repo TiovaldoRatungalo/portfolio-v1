@@ -40,6 +40,7 @@ import {
   FiGrid,
   FiMonitor,
   FiBox,
+  FiCpu,
 } from "react-icons/fi";
 import { FaGamepad } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
@@ -764,7 +765,6 @@ export default function Home() {
               <TechBadge icon={<SiTypescript size={12} />} label="TypeScript" delay={0.8} />
               <TechBadge icon={<SiTailwindcss size={12} />} label="Tailwind" delay={0.9} />
               <TechBadge icon={<SiUnity size={12} />} label="Unity" delay={1.0} />
-              <TechBadge icon={<FiShield size={12} />} label="CyberSec" delay={1.1} />
             </div>
 
             <div className="flex gap-3 mt-3 flex-wrap justify-start">
@@ -895,7 +895,7 @@ export default function Home() {
                   <div className="text-muted-foreground text-sm sm:text-base leading-relaxed space-y-4 font-mono">
                     <p>
                       <span className="text-primary/70">{">"}</span> Hi, I'm <strong className="text-foreground font-bold drop-shadow-[0_0_8px_rgba(108,79,199,0.4)]">Tiovaldo Sindovan Ratungalo</strong> — a Computer Science
-                      graduate from Universitas Klabat (2024) with a passion for building things that live on the web. My focus sits at the intersection of <span className="text-primary font-medium">front-end development</span>, <span className="text-primary font-medium">AI</span>, and <span className="text-primary font-medium">cybersecurity</span>: I like crafting interfaces that feel effortless to use, while staying curious about what's happening under the hood — from how systems can be made more secure to how AI can make them smarter.
+                      graduate from Universitas Klabat (2024) with a passion for building things that live on the web. My focus sits at the intersection of <span className="text-primary font-medium">front-end development</span> and <span className="text-primary font-medium">AI</span>: I like crafting interfaces that feel effortless to use, while staying curious about what's happening under the hood — exploring how AI can make systems smarter.
                     </p>
                     <p>
                       <span className="text-primary/70">{">"}</span> I'm an analytical thinker who enjoys breaking down complex problems into clean, efficient solutions. When I'm not coding, I'm usually exploring new tools and technologies, always looking for better ways to build.
@@ -921,7 +921,7 @@ export default function Home() {
                     { skill: "Game Dev", level: 65, icon: <FaGamepad size={16} /> },
                     { skill: "Web Dev", level: 70, icon: <FiMonitor size={16} /> },
                     { skill: "Mobile Dev", level: 65, icon: <FiSmartphone size={16} /> },
-                    { skill: "MS Office", level: 90, icon: <SiDotnet size={16} /> },
+                    { skill: "AI", level: 75, icon: <FiCpu size={16} /> },
                   ].map((item, index) => (
                     <SkillRadialProgress key={index} skill={item.skill} level={item.level} delay={0.5 + index * 0.1} icon={item.icon} />
                   ))}

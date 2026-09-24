@@ -135,8 +135,8 @@
       "siapa pembuat web",
       "siapa kamu sebenarnya"
     ],
-    "answer_id": "Tiovaldo Sindovan Ratungalo adalah lulusan Sarjana Komputer dari Universitas Klabat tahun 2024 yang memiliki minat pada teknologi, AI, dan keamanan siber. Ia juga tertarik pada pengembangan front-end web dan AI development.",
-    "answer_en": "Tiovaldo Sindovan Ratungalo is a Computer Science graduate from Klabat University (2024) with interests in technology, AI, and cybersecurity. He is also passionate about front-end web development and AI development.",
+    "answer_id": "Tiovaldo Sindovan Ratungalo adalah lulusan Sarjana Komputer dari Universitas Klabat tahun 2024 yang memiliki minat pada teknologi dan AI. Ia juga tertarik pada pengembangan front-end web dan AI development.",
+    "answer_en": "Tiovaldo Sindovan Ratungalo is a Computer Science graduate from Klabat University (2024) with interests in technology and AI. He is also passionate about front-end web development and AI development.",
     "suggestions": [
       "Profil lengkap",
       "Skill apa saja?",
@@ -162,8 +162,8 @@
       "deskripsi",
       "perkenalan"
     ],
-    "answer_id": "Tiovaldo adalah lulusan Computer Science dari Universitas Klabat yang fokus pada pengembangan web modern, AI, dan keamanan sistem. Ia menyukai belajar teknologi baru dan mengembangkan solusi digital yang inovatif serta user-friendly. Memiliki mindset analitis yang kuat dan kemampuan problem-solving yang baik.",
-    "answer_en": "Tiovaldo is a Computer Science graduate from Klabat University focused on modern web development, AI, and system security. He enjoys learning new technologies and developing innovative, user-friendly digital solutions. He has a strong analytical mindset and solid problem-solving skills.",
+    "answer_id": "Tiovaldo adalah lulusan Computer Science dari Universitas Klabat yang fokus pada pengembangan web modern dan AI. Ia menyukai belajar teknologi baru dan mengembangkan solusi digital yang inovatif serta user-friendly. Memiliki mindset analitis yang kuat dan kemampuan problem-solving yang baik.",
+    "answer_en": "Tiovaldo is a Computer Science graduate from Klabat University focused on modern web development and AI. He enjoys learning new technologies and developing innovative, user-friendly digital solutions. He has a strong analytical mindset and solid problem-solving skills.",
     "suggestions": [
       "Skill apa saja?",
       "Lihat project",
@@ -238,8 +238,8 @@
       "kompetensi",
       "bidang keahlian"
     ],
-    "answer_id": "Keahlian Tiovaldo meliputi:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• MS Office (90%)\n• Cybersecurity — dasar keamanan jaringan & perlindungan data\n• AI Development — chatbot & machine learning",
-    "answer_en": "Tiovaldo's skills include:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• MS Office (90%)\n• Cybersecurity — network security & data protection basics\n• AI Development — chatbot & machine learning",
+    "answer_id": "Keahlian Tiovaldo meliputi:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• AI (75%) — chatbot & machine learning",
+    "answer_en": "Tiovaldo's skills include:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• AI (75%) — chatbot & machine learning",
     "suggestions": [
       "Frontend detail",
       "Backend detail",
@@ -633,8 +633,8 @@
       "programming language",
       "tools yang digunakan"
     ],
-    "answer_id": "Teknologi yang digunakan Tiovaldo meliputi:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotika: C, Webots Simulator\n• Lainnya: MS Office",
-    "answer_en": "Technologies used by Tiovaldo include:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotics: C, Webots Simulator\n• Other: MS Office",
+    "answer_id": "Teknologi yang digunakan Tiovaldo meliputi:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotika: C, Webots Simulator",
+    "answer_en": "Technologies used by Tiovaldo include:\n• Frontend: React, Next.js, TypeScript, Tailwind CSS\n• Mobile: React Native, Android Studio, Java\n• Game: Unity, C#\n• 3D: Blender\n• Backend: MySQL, REST API\n• AI: Python, Speech Recognition\n• Robotics: C, Webots Simulator",
     "suggestions": [
       "Frontend detail",
       "Backend detail",
