@@ -62,12 +62,22 @@ function normalizeInput(message: string): string {
 
 function detectLanguage(message: string): ReplyLanguage {
   const lower = message.toLowerCase();
-  const padded = ` ${lower} `;
-  const idHints = [" apa ", " siapa ", " dimana ", " bagaimana ", " kenapa ", "kamu", "saya", "yang", "dan", "tidak", "terima kasih", "tolong", "gimana", "bisa", "buat"];
-  const enHints = [" what ", " who ", " where ", " when ", " why ", " how ", " you ", " i ", " is ", " are ", " can ", " please", "thanks", "thank you", "does"];
-  const idScore = idHints.filter((h) => padded.includes(h)).length;
-  const enScore = enHints.filter((h) => padded.includes(h)).length;
-  return enScore > idScore ? "en" : "id";
+  
+  // Indonesian common words/patterns
+  const idRegex = /\b(apa|siapa|dimana|bagaimana|kenapa|kamu|saya|yang|dan|tidak|terima kasih|tolong|gimana|bisa|buat|tentang|kabar|halo|hai|makasih)\b/g;
+  
+  // English common words/patterns
+  const enRegex = /\b(what|who|where|when|why|how|you|i|is|are|can|please|thanks|thank you|does|do|hello|hi|hey|tell|me|about)\b/g;
+  
+  const idMatches = lower.match(idRegex);
+  const enMatches = lower.match(enRegex);
+  
+  const idScore = idMatches ? idMatches.length : 0;
+  const enScore = enMatches ? enMatches.length : 0;
+  
+  // Default to English if there are english words and they outnumber Indonesian words
+  if (enScore > 0 && enScore >= idScore) return "en";
+  return "id";
 }
 
 function pickAnswer(item: KnowledgeItem, language: ReplyLanguage): string {
@@ -103,7 +113,12 @@ function getBotReply(message: string) {
   const intentScores = new Map<number, { score: number, matches: number }>();
 
   // Stop words to ignore during token matching so they don't hijack the intent
-  const stopWords = ["apa", "siapa", "dimana", "kapan", "kenapa", "bagaimana", "cara", "yang", "dan", "untuk", "dari", "ke", "di", "tiovaldo", "tio", "ratungalo", "dia", "kamu", "saya", "buat", "bikin", "itu", "ini"];
+  const stopWords = [
+    // Indo
+    "apa", "siapa", "dimana", "kapan", "kenapa", "bagaimana", "cara", "yang", "dan", "untuk", "dari", "ke", "di", "dia", "kamu", "saya", "buat", "bikin", "itu", "ini",
+    // English
+    "what", "who", "where", "when", "why", "how", "is", "are", "am", "was", "were", "do", "does", "did", "you", "your", "yours", "i", "my", "mine", "tell", "me", "about", "can", "could", "would", "the", "a", "an", "and", "or", "to", "of", "in", "on", "with", "know", "please"
+  ];
 
   for (const word of inputWords) {
     // Only fuzzy search meaningful words
@@ -115,7 +130,7 @@ function getBotReply(message: string) {
       const score = bestForWord.score ?? 1;
 
       // If the word matches a keyword confidently
-      if (score <= 0.35) {
+      if (score <= 0.45) {
         const idx = bestForWord.item.intentIndex;
         const current = intentScores.get(idx) || { score: 0, matches: 0 };
         current.score += score;
@@ -136,7 +151,7 @@ function getBotReply(message: string) {
     const avgScore = bestMatch[1].score / bestMatch[1].matches;
     const bestItem = knowledgeBase[bestMatch[0]];
 
-    if (avgScore <= 0.35) {
+    if (avgScore <= 0.45) {
       // Confident match
       return {
         reply: pickAnswer(bestItem, language),
@@ -153,7 +168,7 @@ function getBotReply(message: string) {
     const bestScore = bestResult.score ?? 1;
     const bestItem = knowledgeBase[bestResult.item.intentIndex];
 
-    if (bestScore <= 0.3) {
+    if (bestScore <= 0.4) {
       return {
         reply: pickAnswer(bestItem, language),
         suggestions: bestItem.suggestions || defaultSuggestions[language],
@@ -161,7 +176,7 @@ function getBotReply(message: string) {
       };
     }
 
-    if (bestScore <= 0.5) {
+    if (bestScore <= 0.6) {
       // Uncertain match -> Did you mean?
       const seenIntents = new Set<number>();
       const didYouMeanItems: string[] = [];

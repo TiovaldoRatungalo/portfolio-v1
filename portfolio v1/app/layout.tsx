@@ -9,6 +9,7 @@ import ScrollAnimations from "@/components/ScrollAnimations";
 import LoadingScreen from "@/components/LoadingScreen";
 import { LoadingProvider } from "@/contexts/LoadingContext";
 import MainContentWrapper from "@/components/MainContentWrapper";
+import GlobalAiChat from "@/components/GlobalAiChat";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -49,6 +50,7 @@ export default function RootLayout({
             <MainContentWrapper>
               {children}
             </MainContentWrapper>
+            <GlobalAiChat />
           </LoadingProvider>
         </ThemeProvider>
       </body>

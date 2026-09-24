@@ -149,6 +149,9 @@ export default function AiChat({ enabled = true }: { enabled?: boolean }) {
       {/* FLOATING BUTTON */}
       <motion.button
         onClick={() => setOpen((p) => !p)}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.5, duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="fixed bottom-6 right-6 z-[9999] w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden"

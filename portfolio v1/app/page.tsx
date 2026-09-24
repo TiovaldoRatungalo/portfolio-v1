@@ -5,7 +5,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { useLoading } from "@/contexts/LoadingContext";
 import Navbar from "../components/Navbar";
-import AiChat from "@/components/AiChat";
 import StrokeText from "../components/StrokeText";
 import RotatingText from "../components/RotatingText";
 import { FloatingDock } from "@/components/ui/floating-dock";
@@ -1173,8 +1172,6 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* AI Chat */}
-      {loadingPhase === 'done' && <AiChat />}
     </>
   );
 }

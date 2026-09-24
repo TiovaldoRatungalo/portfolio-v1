@@ -133,7 +133,10 @@
       "who is tiovaldo",
       "who made this website",
       "siapa pembuat web",
-      "siapa kamu sebenarnya"
+      "siapa kamu sebenarnya",
+      "who is he",
+      "who tiovaldo",
+      "who is tiovaldo"
     ],
     "answer_id": "Tiovaldo Sindovan Ratungalo adalah lulusan Sarjana Komputer dari Universitas Klabat tahun 2024 yang memiliki minat pada teknologi dan AI. Ia juga tertarik pada pengembangan front-end web dan AI development.",
     "answer_en": "Tiovaldo Sindovan Ratungalo is a Computer Science graduate from Klabat University (2024) with interests in technology and AI. He is also passionate about front-end web development and AI development.",
@@ -236,7 +239,12 @@
       "expertise",
       "competency",
       "kompetensi",
-      "bidang keahlian"
+      "bidang keahlian",
+      "what are his skills",
+      "what can he do",
+      "technical skills",
+      "expertise",
+      "skills"
     ],
     "answer_id": "Keahlian Tiovaldo meliputi:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• AI (75%) — chatbot & machine learning",
     "answer_en": "Tiovaldo's skills include:\n• Web Development (70%) — React, Next.js, TypeScript, Tailwind CSS\n• Game Development (65%) — Unity, C#\n• Mobile Development (65%) — React Native, Android Studio\n• AI (75%) — chatbot & machine learning",
@@ -428,7 +436,12 @@
       "show projects",
       "lihat project",
       "karya apa saja",
-      "apa saja yang pernah dibuat"
+      "apa saja yang pernah dibuat",
+      "what projects",
+      "show projects",
+      "what has he built",
+      "portfolio projects",
+      "his work"
     ],
     "answer_id": "Proyek Tiovaldo mencakup:\n• AI Virtual Assistant — aplikasi mobile dengan fitur chatbot suara untuk jadwal dokter dan layanan rumah sakit.\n• 3D Modeling — pembuatan model mobil 3D menggunakan Blender.\n• 3D Energy Ball — game dengan efek shader & pencahayaan dinamis (Unity).\n• Robotika Webots — simulasi robot E-puck yang diprogram dengan C.\n• 3D Airplane Controller — game simulasi kontrol pesawat 3D (Unity).\n• Trading Simulation — web simulasi trading saham & kripto secara real-time.\n• AutoClip — aplikasi web otomatis untuk memotong video YouTube (Python).\n• ViralWave — aplikasi web untuk mendengarkan lagu-lagu viral & trending.\n• JFast — aplikasi web interaktif untuk belajar bahasa Jepang.",
     "answer_en": "Tiovaldo's projects include:\n• AI Virtual Assistant — a mobile app with voice chatbot for doctor schedules and hospital services.\n• 3D Modeling — 3D car model creation using Blender.\n• 3D Energy Ball — game with shader effects & dynamic lighting (Unity).\n• Webots Robotics — E-puck robot simulation programmed in C.\n• 3D Airplane Controller — 3D flight control simulation game (Unity).\n• Trading Simulation — real-time web-based stock & crypto trading simulation.\n• AutoClip — web app for automatically clipping YouTube videos (Python).\n• ViralWave — web app for discovering and listening to trending songs.\n• JFast — an interactive web application for learning Japanese.",
