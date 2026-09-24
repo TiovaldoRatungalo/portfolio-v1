@@ -5,6 +5,9 @@ import { ThemeProvider } from "next-themes";
 import ThemePixelTransition from "@/components/ThemePixelTransition";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import ScrollAnimations from "@/components/ScrollAnimations";
+import LoadingScreen from "@/components/LoadingScreen";
+import { LoadingProvider } from "@/contexts/LoadingContext";
+import MainContentWrapper from "@/components/MainContentWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,11 +37,16 @@ export default function RootLayout({
       >
         {/* ThemeProvider langsung di sini */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemePixelTransition />
-          {/* Smooth scroll + GSAP scroll animations — purely behavioral */}
-          <SmoothScrollProvider />
-          <ScrollAnimations />
-          {children}
+          <LoadingProvider>
+            <ThemePixelTransition />
+            {/* Smooth scroll + GSAP scroll animations — purely behavioral */}
+            <SmoothScrollProvider />
+            <ScrollAnimations />
+            <LoadingScreen />
+            <MainContentWrapper>
+              {children}
+            </MainContentWrapper>
+          </LoadingProvider>
         </ThemeProvider>
       </body>
     </html>

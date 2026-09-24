@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useLoading } from "@/contexts/LoadingContext";
 import Navbar from "../components/Navbar";
 import AiChat from "@/components/AiChat";
 import StrokeText from "../components/StrokeText";
@@ -44,7 +45,6 @@ import {
 } from "react-icons/fi";
 import { FaGamepad } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
-import LoadingScreen from "../components/LoadingScreen";
 import Profile3D from "../components/Profile3D";
 
 // 🧠 Lazy load components berat
@@ -407,34 +407,35 @@ const QuoteSection = () => {
 
       {/* ── CONTENT ── */}
       <div className="relative z-20 w-full max-w-4xl mx-auto px-4 sm:px-8 py-20">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={quoteIndex}
-            initial={{ opacity: 0, y: 50, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -30, scale: 0.97 }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white/70 dark:bg-[#120E1A]/95 backdrop-blur-md border border-gray-200 dark:border-primary/20 shadow-[0_20px_40px_rgba(0,0,0,0.05),_0_0_60px_rgba(108,79,199,0.05)] dark:shadow-[0_0_80px_rgba(108,79,199,0.1),_0_40px_80px_rgba(0,0,0,0.4),_inset_0_1px_0_rgba(255,255,255,0.05)] transition-colors duration-300"
-          >
-            {/* Top glow line */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white/70 dark:bg-[#120E1A]/95 backdrop-blur-md border border-gray-200 dark:border-primary/20 shadow-[0_20px_40px_rgba(0,0,0,0.05),_0_0_60px_rgba(108,79,199,0.05)] dark:shadow-[0_0_80px_rgba(108,79,199,0.1),_0_40px_80px_rgba(0,0,0,0.4),_inset_0_1px_0_rgba(255,255,255,0.05)] transition-colors duration-300"
+        >
+          {/* Top glow line */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
-
-
-            <div className="p-8 sm:p-12 lg:p-16 flex flex-col gap-10">
-              {/* TAG + counter */}
+          <div className="p-8 sm:p-12 lg:p-16 flex flex-col gap-10">
+            
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, x: -15 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="flex items-center gap-3"
+                key={quoteIndex}
+                initial={{ opacity: 0, filter: "blur(4px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, filter: "blur(4px)" }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="flex flex-col gap-10"
               >
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[11px] font-mono uppercase tracking-widest">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                  {current.tag}
-                </span>
-                <span className="text-muted-foreground/35 text-xs font-mono">{quoteIndex + 1} / {quotes.length}</span>
-              </motion.div>
+                {/* TAG + counter */}
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[11px] font-mono uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    {current.tag}
+                  </span>
+                  <span className="text-muted-foreground/35 text-xs font-mono">{quoteIndex + 1} / {quotes.length}</span>
+                </div>
 
               {/* GIANT QUOTE MARK + ANIMATED WORDS */}
               <div className="relative min-h-[140px] sm:min-h-[180px]">
@@ -478,12 +479,7 @@ const QuoteSection = () => {
               </div>
 
               {/* AUTHOR */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="flex items-center gap-4 pl-8 sm:pl-14"
-              >
+              <div className="flex items-center gap-4 pl-8 sm:pl-14">
                 <div
                   className="w-11 h-11 sm:w-13 sm:h-13 rounded-full flex items-center justify-center text-base sm:text-lg font-bold text-white flex-shrink-0 relative"
                   style={{
@@ -504,10 +500,12 @@ const QuoteSection = () => {
                   <span className="text-sm sm:text-base font-bold text-foreground font-mono">{current.author}</span>
                   <span className="text-[11px] sm:text-xs text-muted-foreground font-mono tracking-widest uppercase">{current.role}</span>
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-              {/* PROGRESS BAR + DOTS */}
-              <div className="flex items-center gap-4 pl-8 sm:pl-14">
+          {/* PROGRESS BAR + DOTS */}
+          <div className="flex items-center gap-4 pl-8 sm:pl-14">
                 <div className="flex gap-2 items-center">
                   {quotes.map((_, i) => (
                     <motion.button
@@ -533,12 +531,11 @@ const QuoteSection = () => {
                   />
                 </div>
               </div>
-            </div>
+          </div>
 
-            {/* Bottom glow line */}
-            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
-          </motion.div>
-        </AnimatePresence>
+          {/* Bottom glow line */}
+          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
+        </motion.div>
       </div>
     </section>
   );
@@ -566,8 +563,8 @@ export default function Home() {
   const prefersReducedMotion = useReducedMotion();
   const [isIOS, setIsIOS] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [loadingDone, setLoadingDone] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
+  const { loadingPhase } = useLoading();
 
   // Parallax for hero profile image
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
@@ -579,9 +576,6 @@ export default function Home() {
       const ua = navigator.userAgent;
       const is_ios = /iPad|iPhone|iPod/.test(ua);
       setIsIOS(is_ios);
-      if (is_ios) {
-        setLoadingDone(true);
-      }
       const checkMobile = () => setIsMobile(window.innerWidth < 768);
       checkMobile();
       window.addEventListener("resize", checkMobile);
@@ -711,9 +705,6 @@ export default function Home() {
 
   return (
     <>
-      {/* ===== LOADING SCREEN ===== */}
-      {!loadingDone && <LoadingScreen onFinish={() => setLoadingDone(true)} />}
-
       <div className="font-sans bg-background text-foreground transition-colors duration-300">
         {/* ====== NAVBAR ====== */}
         <Navbar />
@@ -1183,7 +1174,7 @@ export default function Home() {
       </div>
 
       {/* AI Chat */}
-      {loadingDone && <AiChat />}
+      {loadingPhase === 'done' && <AiChat />}
     </>
   );
 }

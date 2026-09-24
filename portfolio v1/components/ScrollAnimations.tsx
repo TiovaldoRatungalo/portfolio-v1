@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLoading } from "@/contexts/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,11 @@ const isMobile = () =>
   typeof window !== "undefined" && window.innerWidth < 768;
 
 export default function ScrollAnimations() {
+  const { loadingPhase } = useLoading();
+
   useEffect(() => {
+    if (loadingPhase !== "done") return;
+
     // Wait a tick to let the DOM settle after hydration
     const initId = setTimeout(() => {
       const mobile = isMobile();
@@ -127,7 +132,7 @@ export default function ScrollAnimations() {
       clearTimeout(initId);
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
-  }, []);
+  }, [loadingPhase]);
 
   return null;
 }
