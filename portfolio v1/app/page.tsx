@@ -871,10 +871,7 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="mb-8"
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-5 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-mono uppercase tracking-wider shadow-[0_0_10px_rgba(108,79,199,0.1)]">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_5px_rgba(108,79,199,0.8)]" />
-                  System Overview
-                </div>
+
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground mb-6 leading-tight">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Initializing</span> Profile Data...
